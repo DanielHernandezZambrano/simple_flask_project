@@ -1,0 +1,7 @@
+{% if user_ip %}
+    <h1>"Hola lindo, ¿tú dirección IP no será?: {{user_ip}}"</h1>
+
+{% else %}
+    <a href="{{ url_for('index')}}"> Crear Cookie </a>   <!-- Es url_for, 10 minutos de error jajaja-->
+
+{% endif %} <!-- Cierra los if's-->
