@@ -1,0 +1,5 @@
+# Ignorar el entorno virtual
+env/
+
+# Markdown personal
+roadmap.md
