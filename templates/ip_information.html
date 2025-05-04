@@ -1,26 +1,26 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html lang="es">
+{% block title %}
+    {{ super() }}      
+    Bienvenido
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Primer Proyecto en Flask</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
-</head>
+{% block contend %}
 
+    {% if user_ip %}
+        <h1>"Hola lindo, ¿tú dirección IP no será?: {{user_ip}}"</h1>
 
-{% if user_ip %}
-    <h1>"Hola lindo, ¿tú dirección IP no será?: {{user_ip}}"</h1>
+    {% else %}
+        <a href="{{ url_for('index')}}"> Crear Cookie </a>   <!-- Es url_for, 10 minutos de error jajaja-->
 
-{% else %}
-    <a href="{{ url_for('index')}}"> Crear Cookie </a>   <!-- Es url_for, 10 minutos de error jajaja-->
+    {% endif %} <!-- Cierra los if's-->
 
-{% endif %} <!-- Cierra los if's-->
+    <ul>
+        {% for i in items%}
 
-<ul>
-{% for i in items%}
+            <li> {{i}} </li>
 
-    <li> {{i}} </li>
+        {% endfor %}
+    </ul>  
 
-{% endfor %}
-</ul>   
+{% endblock %}
