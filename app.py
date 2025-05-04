@@ -3,7 +3,7 @@ from flask import Flask, request, make_response, redirect, render_template
 app = Flask(__name__)
 
 # Lista de items
-items = ["ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4"]
+items = ["Palta", "Banana", "Tomate", "Cebolla", "Pimiento Rojo", "Maple de huevos"]
 
 @app.route('/index')
 def index():
