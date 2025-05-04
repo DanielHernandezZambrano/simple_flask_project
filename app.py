@@ -2,6 +2,9 @@ from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 
+# Lista de items
+items = ["ITEM 1", "ITEM 2", "ITEM 3", "ITEM 4"]
+
 @app.route('/index')
 def index():
     #return render_template('index.html')
@@ -17,10 +20,14 @@ def index():
 def show_information():
     user_ip = request.cookies.get("user_ip_information")
 
-    return render_template("ip_information.html", user_ip=user_ip)
+    context = {
+        "user_ip": user_ip,
+        "items": items
+    }
+    return render_template("ip_information.html", **context)
 
 # Tambien funciona con solo app.run()
 if __name__ == '__main__':
     app.run(debug=True) 
     # En entornos de producción el debug=True se va, porque si ocurre un error, revela el back al cliente,
-    # y eso es un error de seguridad.
+    # y eso es un error de seguridad
