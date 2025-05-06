@@ -26,6 +26,11 @@ def show_information():
     }
     return render_template("ip_information.html", **context)
 
+# Manejo de errores, error 404
+@app.errorhandler(404)
+def not_found_endpoint(error):
+    return render_template('404.html', error=error)
+
 # Tambien funciona con solo app.run()
 if __name__ == '__main__':
     app.run(debug=True) 

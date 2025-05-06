@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+
+    {{ super() }}
+    404
+
+{% endblock %}
+
+{% block contend %}
+
+    <h2>Lo sentimos, este recurso no existe en nuestra app.</h2>
+    <p> {{ error }} </p>
+
+{% endblock %}
