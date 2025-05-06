@@ -7,6 +7,10 @@
     <title>{% block title %} Primer Proyecto con Flask | {% endblock %}</title>
 </head>
 <body>
+    <header>
+        {% include 'nav_bar.html' %}
+    </header>
+
     {% block contend %}
     {% endblock %}
 </body>
