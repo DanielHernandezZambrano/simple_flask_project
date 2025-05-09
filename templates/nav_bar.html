@@ -1,9 +1,32 @@
-<nav>
-    <ul>
-        
-        <img src="{{ url_for('static', filename='images/flask_logo.png') }}" alt="">
+<!--
+<nav class="navbar bg-body-tertiary">
 
+    <div class="container-fluid">
+        <ul>
+        <img src="{{ url_for('static', filename='images/flask_logo.png') }}" alt="Logo" class="d-inline-block align-text-top">
+        
         <li><a href="{{url_for('index')}}">Botón Inicio</a></li>
         <li><a href="https://terraria.fandom.com/es/wiki/Wiki_Terraria">Terraria Wiki</a></li>
-    </ul>
+
+        </ul>
+
+    </div>
+
 </nav>
+-->
+
+<nav class="navbar navbar-default">
+
+    <img src="{{ url_for('static', filename='images/flask_logo.png') }}" alt="Logo" class="d-inline-block align-text-top">
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Flask App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{url_for('index')}}">Botón Inicio</a></li>
+        <li><a href="https://terraria.fandom.com/es/wiki/Wiki_Terraria">Terraria Wiki</a></li>
+        <li><a href="https://www.google.com">Botón a Google</a></li>
+      </ul>
+    </div>
+  </nav>
